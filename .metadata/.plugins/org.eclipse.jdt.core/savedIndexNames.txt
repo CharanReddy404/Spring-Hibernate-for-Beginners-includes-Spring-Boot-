@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\Chara\Desktop\JAVA\Spring & Hibernate for Beginners (includes Spring Boot)\.metadata\.plugins\org.eclipse.jdt.core
+3501714628.index
+2796032743.index
