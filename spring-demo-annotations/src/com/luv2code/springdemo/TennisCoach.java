@@ -23,12 +23,12 @@ public class TennisCoach implements Coach {
 	
 	@PostConstruct
 	public void doMyStartupStuff() {
-		System.out.println(">> TennisCoach: inside of doMyStartupStuff");
+		System.out.println(">> TennisCoach: inside of doMyStartupStuff()");
 	}
 	
 	@PreDestroy
 	public void doMyCleanupStuff() {
-		System.out.println(">> TennisCoach: inside of doMyCleanupStuff");
+		System.out.println(">> TennisCoach: inside of doMyCleanupStuff()");
 	}
 	
 //	Constructor Injection
