@@ -23,6 +23,13 @@
 	JavaScript <form:radiobutton path="favoriteLanguage" value="JavaScript"/>
 	C++ <form:radiobutton path="favoriteLanguage" value="C++"/>
 	C# <form:radiobutton path="favoriteLanguage" value="c#"/>
+	<br><br>
+	
+	Operating System:
+	
+	Linux <form:checkbox path="operatingSystems" value="Linux"/>
+	Mac OS <form:checkbox path="operatingSystems" value="Mac OS"/>
+	MS Windows <form:checkbox path="operatingSystems" value="MS Window"/>
 	
 	<br><br>
 	<input type="submit" value="Submit"/>
