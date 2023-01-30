@@ -9,5 +9,9 @@
 	
 	<a href="hello/showForm">Hello World from</a>
 	
+	<br><br>
+	
+	<a href="student/showForm">Student from</a>
+	
 </body>
 </html>
