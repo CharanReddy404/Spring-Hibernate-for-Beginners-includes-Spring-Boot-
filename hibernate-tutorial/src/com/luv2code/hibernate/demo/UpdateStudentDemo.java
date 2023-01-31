@@ -21,21 +21,31 @@ public class UpdateStudentDemo {
 		Session session = factory.getCurrentSession();
 		
 		try {
-			int studentId = 1;
+//			int studentId = 1;
+//			
+//			//now get a new session and start transaction
+////			session = factory.getCurrentSession();
+//			session.beginTransaction();
+//			
+//			//retrieve student based on the id: primary key
+//			
+//			System.out.println("\nGetting student with id: "+ studentId);
+//			
+//			Student myStudent = session.get(Student.class, studentId);
+//			
+//			myStudent.setEmail("charan@spring.com");
+//			
+//			System.out.println("Get complete: "+ myStudent);
 			
-			//now get a new session and start transaction
-//			session = factory.getCurrentSession();
+			// update all emails
+			
+			session = factory.getCurrentSession();
 			session.beginTransaction();
 			
-			//retrieve student based on the id: primary key
+			System.out.println("Updating all emails");
 			
-			System.out.println("\nGetting student with id: "+ studentId);
-			
-			Student myStudent = session.get(Student.class, studentId);
-			
-			myStudent.setEmail("charan@spring.com");
-			
-			System.out.println("Get complete: "+ myStudent);
+			session.createQuery("update Student set email='foo@gmail.com'")
+					.executeUpdate();
 			
 			//commit the transaction
 			session.getTransaction().commit();
