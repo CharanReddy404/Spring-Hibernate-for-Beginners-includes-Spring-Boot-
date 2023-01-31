@@ -37,6 +37,18 @@ public class QueryStudentDemo {
 			
 			displayStudents(theStudents);
 			
+			//query student: lastName="Reddy" or firstName="monkey d"
+			
+			theStudents = session.createQuery("from Student s where "
+						+"s.firstName='monkey d' OR s.lastName='one'").getResultList();
+			
+			displayStudents(theStudents);
+			
+			// where email starts with charan AND NOT 
+			
+			theStudents = session.createQuery("from Student s where "+
+					"s.email NOT LIKE 'charan%'").getResultList();
+			displayStudents(theStudents);
 			//commit transaction
 			session.getTransaction().commit();
 			
@@ -48,6 +60,7 @@ public class QueryStudentDemo {
 	}
 
 	private static void displayStudents(List<Student> theStudents) {
+		System.out.println("\n");
 		for(Student tempStudent : theStudents) {
 			System.out.println(tempStudent);
 		}
