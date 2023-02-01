@@ -4,16 +4,19 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.luv2code.hibernate.demo.entity.Instructor;
+import com.luv2code.hibernate.demo.entity.InstructorDetail;
 import com.luv2code.hibernate.demo.entity.Student;
 
-public class CreatStudentDemo {
+public class CreatDemo {
 
 	public static void main(String[] args) {
 
 		// create session factory
 		SessionFactory factory = new Configuration()
 				.configure("hibernate.cfg.xml")
-				.addAnnotatedClass(Student.class)
+				.addAnnotatedClass(Instructor.class)
+				.addAnnotatedClass(InstructorDetail.class)
 				.buildSessionFactory();
 		
 		// create session
@@ -22,15 +25,30 @@ public class CreatStudentDemo {
 		
 		try {
 			//create a student object
-			System.out.println("creating new student object...");
-			Student tempStudent = new Student("Charan", "Reddy", "Charan@spring.com");
+//			Instructor tempInstructor = 
+//					new Instructor("Charan","Reddy","charan@gmail.com");
+//			
+//			InstructorDetail tempInstructorDetail = 
+//					new InstructorDetail("youtube.com/charan", "Coding");
+//			
+//			tempInstructor.setInstructorDetailId(tempInstructorDetail);
+//			
+			
+			Instructor tempInstructor = 
+					new Instructor("Luffy","Monkey D","luffy@monkey.d");
+			
+			InstructorDetail tempInstructorDetail = 
+					new InstructorDetail("youtube.com/MonkeyDLuffy", "Pirate");
+			
+			tempInstructor.setInstructorDetailId(tempInstructorDetail);
+			
 			
 			//start a transaction
 			session.beginTransaction();
 			
-			//save the student object
-			System.out.println("Saving the student..");
-			session.save(tempStudent);
+			System.out.println("Saving instructor: "+tempInstructor);
+			session.save(tempInstructor);
+			
 			
 			//commit transaction
 			session.getTransaction().commit();
